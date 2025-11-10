@@ -12,7 +12,6 @@ from aiogram.types import (
     CallbackQuery, InlineKeyboardButton
 )
 from aiogram.utils.keyboard import InlineKeyboardBuilder 
-# -------------------------------------
 from aiogram.client.default import DefaultBotProperties
 
 from supabase import create_client, Client
@@ -56,7 +55,7 @@ async def handle_start(message: Message, state: FSMContext):
             await state.clear()
         else:
             await message.answer("Оставь надежду всяк входящий и заполни форму регистрации")
-            await message.answer("Кто ты?!?!?!??!?!?!:")
+            await message.answer("Кто ты?!?!?!??!?!?!(Напиши имя):")
             await state.set_state(RegistrationForm.waiting_for_name)
     except Exception as e:
         await message.answer(f"Все сломалось, я обязательно это починю")
